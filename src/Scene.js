@@ -1,9 +1,9 @@
 import * as THREE from 'three';
-import oc from 'three-orbit-controls';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import Stats from 'stats.js';
 
 import MagicCarpet from './MagicCarpet';
-const OrbitControls = oc(THREE);
+
 
 
 export default class Scene{
@@ -29,10 +29,13 @@ export default class Scene{
         this.carpet = new MagicCarpet(this.scene);
 
 
-        //SHOW STATS
-        this.stats = new Stats();
-        this.stats.showPanel(0);
-        document.body.appendChild( this.stats.dom );
+        //SHOW STATS ONLY IN DEV MODE
+        if (process.env.NODE_ENV !== 'production') {
+            this.stats = new Stats();
+            this.stats.showPanel(0);
+            document.body.appendChild( this.stats.dom );
+        }
+        
 
         this.update();
 
@@ -58,12 +61,20 @@ export default class Scene{
     }
     update() {
         if (this.renderer === undefined) return
-        this.stats.begin();
+
+        if (process.env.NODE_ENV !== 'production'){
+            this.stats.begin();
+        }
+       
         requestAnimationFrame(this.update.bind(this))
         this.carpet.update();
         
         this.renderer.render(this.scene, this.camera)
-        this.stats.end();
+
+        if (process.env.NODE_ENV !== 'production'){
+            this.stats.end();
+        }
+        
     }
     
 }

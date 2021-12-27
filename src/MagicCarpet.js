@@ -40,7 +40,6 @@ export default class MagicCarpet{
     }
     
     update(){
-        this.mesh.rotation.z += 0.001;
         let elapsedMilliseconds = Date.now() - this.startTime;
         let elapsedSeconds = elapsedMilliseconds / 1000.;
         this.uniforms.time.value = 60. * elapsedSeconds;

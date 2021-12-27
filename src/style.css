@@ -1,9 +1,6 @@
 body{
     margin: 0;
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(150,150,150,1) 100%);
-    
-
-
+    background: black;
 }
 
 canvas{
