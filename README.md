@@ -1,6 +1,9 @@
 # ThreeJS Parcel Starter
 
+![alt text](https://assets.colet.fr/carpet.png)
+
 Quick starter for experimenting ThreeJS using Parcel as bundler.
+
 
 ## Installation
 
@@ -9,7 +12,7 @@ Install all the dependencies
 ```bash
 npm i
 ```
-Start a new server
+Start a new development server
 ```bash
 npm run dev
 ```
