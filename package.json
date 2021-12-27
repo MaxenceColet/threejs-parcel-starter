@@ -12,10 +12,10 @@
   "license": "ISC",
   "devDependencies": {
     "@parcel/transformer-glsl": "^2.0.1",
-    "parcel": "^2.0.1"
+    "parcel": "^2.0.1",
+    "stats.js": "^0.17.0"
   },
   "dependencies": {
-    "stats.js": "^0.17.0",
     "three": "^0.136.0"
   }
 }
